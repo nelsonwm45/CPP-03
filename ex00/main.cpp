@@ -1,39 +1,115 @@
 #include "ClapTrap.hpp"
 
+void	hp_test(void)
+{
+	ClapTrap	ct1("Cicak");
+	ClapTrap	ct2("Spider");
+
+	std::cout << YELLOW << "-------------HP TEST----------------" << std::endl;
+	// ct1.printStatus();
+	// ct2.printStatus();
+	std::cout << YELLOW << "Adjusting HP for hp test" << std::endl;
+	ct1.setHitPts(0);
+	ct2.setHitPts(10);
+	// ct1.printStatus();
+	// ct2.printStatus();
+
+	ct1.attack("Spider");
+	ct2.attack("Cicak");
+	ct1.takeDamage(ct2.getAttackDmg());
+	// ct2.takeDamage(ct1.getAttackDmg());
+	// ct1.printStatus();
+	// ct2.printStatus();
+	ct1.beRepaired(10);
+	ct2.beRepaired(10);
+	// ct1.printStatus();
+	// ct2.printStatus();
+}
+
+void	energy_test(void)
+{
+	ClapTrap	ct1("Cicak");
+	ClapTrap	ct2("Spider");
+
+	std::cout << YELLOW << "----------------ENERGY TEST---------------------" << std::endl;
+	// ct1.printStatus();
+	// ct2.printStatus();
+	std::cout << YELLOW << "Adjusting energy for energy test" << std::endl;
+	ct1.setEnergyPts(0);
+	ct2.setEnergyPts(10);
+	// ct1.printStatus();
+	// ct2.printStatus();
+
+	ct1.attack("Spider");
+	ct2.attack("Cicak");
+	ct1.takeDamage(ct2.getAttackDmg());
+	ct2.takeDamage(ct1.getAttackDmg());
+	// ct1.printStatus();
+	// ct2.printStatus();
+	ct1.beRepaired(10);
+	ct2.beRepaired(10);
+	// ct1.printStatus();
+	// ct2.printStatus();
+}
+
+void	dmg_test(void)
+{
+	ClapTrap	ct1("Cicak");
+	ClapTrap	ct2("Spider");
+
+	std::cout << YELLOW << "--------------DMG TEST-------------" << RESET << std::endl;
+	// ct1.printStatus();
+	// ct2.printStatus();
+	std::cout << YELLOW << "Adjusting dmg for dmg test" << std::endl;
+	ct1.setAttackDmg(7);
+	ct2.setAttackDmg(2);
+	ct2.setAttackDmg(-1);
+	// ct1.printStatus();
+	// ct2.printStatus();
+
+	ct1.attack("Spider");
+	ct2.takeDamage(ct1.getAttackDmg());
+	ct1.attack("Spider");
+	ct2.takeDamage(ct1.getAttackDmg());
+	ct1.attack("Spider");
+	ct2.takeDamage(ct1.getAttackDmg());
+}
+
+void	setter_overload_test(void)
+{
+	ClapTrap	ct1("Cicak");
+	ClapTrap	ct2("Spider");
+
+	std::cout << YELLOW << "--------------SETTER TEST-------------" << RESET << std::endl;
+	// ct1.printStatus();
+	// ct2.printStatus();
+	std::cout << YELLOW << "Adjusting dmg for setter test" << std::endl;
+	ct1.setAttackDmg(123456);
+	ct2.setAttackDmg(-1);
+	ct2.setAttackDmg(2147483647);
+	ct2.setAttackDmg(3000000000U);
+	ct2.setAttackDmg(4294967295U);
+	// ct1.printStatus();
+	// ct2.printStatus();
+}
+
+void	ocf_test(void)
+{
+	std::cout << YELLOW << "--------------OCF TEST---------------" << RESET << std::endl;
+	ClapTrap	ct1; // default constructor
+	ClapTrap	ct2("Pikachu"); // string construstor 
+	ClapTrap	ct3(ct2); // copy constructor
+	ClapTrap	ct4;
+
+	ct4 = ct2; // copy assignment operator
+	ct4.printStatus();
+}
+
 int	main(void)
 {
-	ClapTrap	ct1("Weezing");
-	ClapTrap	ct2;
-	ClapTrap	ct3 = ct1;
-	ClapTrap	ct4("Banana");
-	ClapTrap	ct5(ct4);
-	ClapTrap	ct6("Pineapple");
-	
-	ct2 = ct6;
-	ct1.printStatus();
-	ct4.printStatus();
-	ct5.printStatus();
-
-
-	ct1.setAttackDmg(5); // set the attack dmg of ct1 to 5
-	ct1.attack("Banana"); // ct1 attack all banana claptrap
-	ct4.takeDamage(ct1.getAttackDmg());
-	ct5.takeDamage(ct1.getAttackDmg());
-	ct4.takeDamage(ct1.getAttackDmg());
-	ct5.takeDamage(ct1.getAttackDmg());
-
-	ct1.printStatus();
-	ct4.printStatus();
-	ct5.printStatus();
-	ct1.beRepaired(2); // can repair
-	ct4.beRepaired(2); // should be cannot repair
-	ct5.beRepaired(2); // cannot repair
-	ct4.attack("Banana"); // cannot attack
-	ct5.attack("Banana"); // cannot attack
-	ct1.attack("Banana"); // can attack
-	ct4.takeDamage(ct1.getAttackDmg()); // suppose ded and cannot take dmg
-	ct5.takeDamage(ct1.getAttackDmg()); // suppose ded
-	ct1.printStatus();
-	ct4.printStatus();
-	ct5.printStatus();
+	ocf_test();
+	setter_overload_test();
+	dmg_test();
+	hp_test();
+	energy_test();
 }
