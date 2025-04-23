@@ -4,24 +4,24 @@
 ClapTrap::ClapTrap():
 	_name("ClapTrap"), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
 {
-	std::cout << GREEN << "Default constructor called\n" << RESET;
-	std::cout << GREEN << _name << " is constructed" << RESET << std::endl;
-};
+	std::cout << GREEN << "[ClapTrap] Default constructor called\n" << RESET;
+	std::cout << GREEN << "[ClapTrap] " << _name << " is constructed" << RESET << std::endl;
+}
 
 // string name constructor
 ClapTrap::ClapTrap(std::string	p_name): 
 	_name(p_name), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
 {
-	std::cout << GREEN << "String construtor called\n" << RESET;
-	std::cout << GREEN << _name << " is constructed" << RESET << std::endl;
-};
+	std::cout << GREEN << "[ClapTrap] String construtor called\n" << RESET;
+	std::cout << GREEN << "[ClapTrap] " << _name << " is constructed" << RESET << std::endl;
+}
 
 // Copy constructor
 ClapTrap::ClapTrap(const ClapTrap &other):
 	_name(other._name), _hit_pts(other._hit_pts), _energy_pts(other._energy_pts), _attack_dmg(other._attack_dmg)
 {
-	std::cout << YELLOW << "Copy constructor called\n" << RESET;
-	std::cout << YELLOW << _name << " is constructed\n" << RESET;
+	std::cout << YELLOW << "[ClapTrap] Copy constructor called\n" << RESET;
+	std::cout << YELLOW << "[ClapTrap] " << _name << " is constructed\n" << RESET;
 }
 
 // Copy Assignment Operator
@@ -34,15 +34,15 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 		this->_energy_pts = other.getEnergyPts();
 		this->_attack_dmg = other.getAttackDmg();
 	}
-	std::cout << YELLOW << "Copy assignment operator called\n" << RESET;
+	std::cout << YELLOW << "[ClapTrap] Copy assignment operator called\n" << RESET;
 	return (*this);
 }
 
 // Default destructor 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << RED << "Destructor called\n" << RESET;
-};
+	std::cout << RED << "[ClapTrap] Destructor called\n" << RESET;
+}
 
 void	ClapTrap::attack(const std::string& target)
 {

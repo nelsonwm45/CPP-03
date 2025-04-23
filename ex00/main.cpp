@@ -2,10 +2,10 @@
 
 void	hp_test(void)
 {
+	std::cout << YELLOW << "-------------HP TEST----------------" << std::endl;
 	ClapTrap	ct1("Cicak");
 	ClapTrap	ct2("Spider");
 
-	std::cout << YELLOW << "-------------HP TEST----------------" << std::endl;
 	// ct1.printStatus();
 	// ct2.printStatus();
 	std::cout << YELLOW << "Adjusting HP for hp test" << std::endl;
@@ -28,10 +28,10 @@ void	hp_test(void)
 
 void	energy_test(void)
 {
+	std::cout << YELLOW << "----------------ENERGY TEST---------------------" << std::endl;
 	ClapTrap	ct1("Cicak");
 	ClapTrap	ct2("Spider");
 
-	std::cout << YELLOW << "----------------ENERGY TEST---------------------" << std::endl;
 	// ct1.printStatus();
 	// ct2.printStatus();
 	std::cout << YELLOW << "Adjusting energy for energy test" << std::endl;
@@ -54,10 +54,10 @@ void	energy_test(void)
 
 void	dmg_test(void)
 {
+	std::cout << YELLOW << "--------------DMG TEST-------------" << RESET << std::endl;
 	ClapTrap	ct1("Cicak");
 	ClapTrap	ct2("Spider");
 
-	std::cout << YELLOW << "--------------DMG TEST-------------" << RESET << std::endl;
 	// ct1.printStatus();
 	// ct2.printStatus();
 	std::cout << YELLOW << "Adjusting dmg for dmg test" << std::endl;
@@ -77,10 +77,10 @@ void	dmg_test(void)
 
 void	setter_overload_test(void)
 {
+	std::cout << YELLOW << "--------------SETTER TEST-------------" << RESET << std::endl;
 	ClapTrap	ct1("Cicak");
 	ClapTrap	ct2("Spider");
 
-	std::cout << YELLOW << "--------------SETTER TEST-------------" << RESET << std::endl;
 	// ct1.printStatus();
 	// ct2.printStatus();
 	std::cout << YELLOW << "Adjusting dmg for setter test" << std::endl;
