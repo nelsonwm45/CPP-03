@@ -148,8 +148,6 @@ void	ClapTrap::setHitPts(int p_hit_pts)
 
 	if (p_hit_pts < 0)
 		std::cout << RED << "Setting below 0 hp is not allowed" << RESET << std::endl;
-	else if (p_hit_pts >= INT32_MAX)
-		std::cout << RED << "INT max or above is not allowed" << RESET << std::endl;
 	else
 	{
 		hp = p_hit_pts;
@@ -166,6 +164,8 @@ void	ClapTrap::setHitPts(unsigned int p_hit_pts)
 	else
 	{
 		this->_hit_pts = p_hit_pts;
+		std::cout << GREEN << this->getName() << " is now have " << this->getHitPts()
+			<< RESET << std::endl;
 	}
 }
 
@@ -175,8 +175,6 @@ void	ClapTrap::setEnergyPts(int p_energy_pts)
 
 	if (p_energy_pts < 0)
 		std::cout << RED << "Setting below 0 ep is not allowed" << RESET << std::endl;
-	else if (p_energy_pts >= INT32_MAX)
-		std::cout << RED << "INT max or above is not allowed" << RESET << std::endl;
 	else
 	{
 		ep = p_energy_pts;
@@ -193,6 +191,8 @@ void	ClapTrap::setEnergyPts(unsigned int p_energy_pts)
 	else
 	{
 		this->_energy_pts = p_energy_pts;
+		std::cout << GREEN << this->getName() << " is now have " << this->getEnergyPts()
+			<< RESET << std::endl;
 	}
 }
 
@@ -202,8 +202,6 @@ void	ClapTrap::setAttackDmg(int p_attack_dmg)
 
 	if (p_attack_dmg < 0)
 		std::cout << RED << "Setting below 0 dmg is not allowed" << RESET << std::endl;
-	else if (p_attack_dmg >= INT32_MAX)
-		std::cout << RED << "INT max or above is not allowed" << RESET << std::endl;
 	else
 	{
 		dmg = p_attack_dmg;
@@ -220,6 +218,8 @@ void	ClapTrap::setAttackDmg(unsigned int p_attack_dmg)
 	else
 	{
 		this->_attack_dmg = p_attack_dmg;
+		std::cout << YELLOW << this->getName() << " is now able to deal " << this->getAttackDmg() << " damage"
+			<< RESET << std::endl;
 	}
 }
 
