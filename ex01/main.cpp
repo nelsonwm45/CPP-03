@@ -3,7 +3,7 @@
 
 void	attack_ptr_test(void)
 {
-	std::cout << YELLOW << "---------------POINTER ATTCK TEST----------------" << std::endl;
+	std::cout << YELLOW << "---------------POINTER ATTACK TEST----------------" << std::endl;
 	ClapTrap	*ptr1;
 
 	ptr1 = new ScavTrap; // calling default constructor to construct ScavTrap and assign to ptr
