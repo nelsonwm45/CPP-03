@@ -13,7 +13,7 @@ WHITE='\033[0;97m'
 PINK  = '\033[35m'
 
 # Program Name
-NAME = ScavTrap
+NAME = FragTrap
 
 # Compiler
 CC = c++
@@ -25,6 +25,7 @@ RM = rm -f
 SRCS =	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+		FragTrap.cpp \
 		
 OBJ = $(SRCS:.cpp=.o)
 
