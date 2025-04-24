@@ -50,7 +50,7 @@ class	ClapTrap
 		ClapTrap &operator=(const ClapTrap &other);
 
 
-		~ClapTrap(void);
+		virtual	~ClapTrap(void);
 
 
 		void	attack(const std::string& target);

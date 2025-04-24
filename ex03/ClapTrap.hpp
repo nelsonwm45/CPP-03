@@ -49,7 +49,8 @@ class	ClapTrap
 		ClapTrap(const ClapTrap &other);
 		ClapTrap &operator=(const ClapTrap &other);
 
-
+		// add virtual keywords so that we dynamic allocated, it knows the next layer where to go to destruct
+		// only need to add at the most base layer, the other layer doesn't need it
 		virtual	~ClapTrap(void);
 
 
